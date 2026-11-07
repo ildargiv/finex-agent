@@ -1,0 +1,8 @@
+# Личные данные пайщика хранятся вне репозитория (~/finex-desk). На всякий случай:
+finex-desk/
+portfolio.json
+*.ods
+*.xlsx
+*.xls
+__pycache__/
+*.pyc
