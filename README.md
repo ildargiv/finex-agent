@@ -1,10 +1,10 @@
 # FinEx — ИИ-агент для пайщиков фондов FinEx в ликвидации
 
-[![license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) ![Agent Skills](https://img.shields.io/badge/Agent%20Skills-SKILL.md-0E7A5C) ![Python](https://img.shields.io/badge/python-3.9%2B-3776AB?logo=python&logoColor=white) ![Hermes Agent](https://img.shields.io/badge/Hermes%20Agent-ready-555) ![OpenClaw](https://img.shields.io/badge/OpenClaw-ready-555) ![Claude Code](https://img.shields.io/badge/Claude%20Code-ready-D97757) ![Codex CLI](https://img.shields.io/badge/Codex%20CLI-ready-555)
+[![license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) ![Agent Skills](https://img.shields.io/badge/Agent%20Skills-SKILL.md-0E7A5C) ![Python](https://img.shields.io/badge/python-3.9%2B-3776AB?logo=python&logoColor=white) ![Hermes Agent](https://img.shields.io/badge/Hermes%20Agent-ready-555) ![OpenClaw](https://img.shields.io/badge/OpenClaw-ready-555) ![Claude Code](https://img.shields.io/badge/Claude%20Code-ready-D97757) ![Codex CLI](https://img.shields.io/badge/Codex%20CLI-ready-555) [![checks](https://github.com/ildargiv/finex-agent/actions/workflows/ci.yml/badge.svg)](https://github.com/ildargiv/finex-agent/actions/workflows/ci.yml) [![release](https://img.shields.io/github/v/release/ildargiv/finex-agent?label=release)](https://github.com/ildargiv/finex-agent/releases)
 
 **Открытый ИИ-агент для держателей фондов FinEx** (FXUS, FXGD, FXCN, FXIT и др.) для Hermes Agent, OpenClaw, Claude Code и Codex CLI: документы ликвидатора Teneo и суда, новости, форумы и Telegram с проверкой, модель выплаты на пай против рыночной цены и предложений выкупа, база знаний в Obsidian.
 
-[Презентация агента](https://ildargiv.github.io/finex-agent/) · [English](#english) · [База знаний в Obsidian](#база-знаний-в-obsidian) · [Семейство агентов](#семейство-агентов) · [Установка](#установка)
+[Презентация агента](https://ildargiv.github.io/finex-agent/?utm_source=github&utm_medium=readme&utm_campaign=finex-agent) · [English](#english) · [База знаний в Obsidian](#база-знаний-в-obsidian) · [Семейство агентов](#семейство-агентов) · [Установка](#установка)
 
 ![FinEx: ИИ-агент для пайщиков фондов FinEx в ликвидации, модель выплаты на пай](docs/preview.png)
 
