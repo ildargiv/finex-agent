@@ -6,3 +6,5 @@ portfolio.json
 *.xls
 __pycache__/
 *.pyc
+invest-vault/
+.obsidian/

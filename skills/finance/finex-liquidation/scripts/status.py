@@ -56,6 +56,9 @@ def main():
         with open(jp, encoding="utf-8") as f:
             tail = f.readlines()[-8:]
         print("Хронология (хвост):\n" + "".join("  " + x for x in tail), end="")
+    import wiki
+    wiki.safe_sync()
+    print(f"\nБаза знаний (Obsidian): {path('index.md', mkdir=False)}; проверка — python wiki.py lint")
 
 
 if __name__ == "__main__":

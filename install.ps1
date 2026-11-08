@@ -53,5 +53,8 @@ $desk = if ($env:FINEX_DESK) { $env:FINEX_DESK } else { Join-Path $HOME "finex-d
 New-Item -ItemType Directory -Force $desk | Out-Null
 Write-Host "Хранилище (портфель и документы, только локально): $desk"
 $py = if (Get-Command python -ErrorAction SilentlyContinue) { "python" } elseif (Get-Command py -ErrorAction SilentlyContinue) { "py" } else { $null }
-if ($py) { try { & $py -m pip install --user --quiet pypdf } catch { Write-Host "Для чтения PDF: $py -m pip install pypdf" } }
+if ($py) {
+    try { & $py -m pip install --user --quiet pypdf } catch { Write-Host "Для чтения PDF: $py -m pip install pypdf" }
+    try { & $py (Join-Path $Src "scripts\wiki.py") init | Out-Null; Write-Host "База знаний Obsidian готова: откройте $desk в Obsidian" } catch { Write-Host "База знаний: python wiki.py init" }
+}
 else { Write-Host "Python не найден: установите Python 3.9+ и pypdf" }
