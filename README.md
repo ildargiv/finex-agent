@@ -1,9 +1,12 @@
-# FinEx — агент для пайщиков фондов FinEx в ликвидации
+# FinEx — ИИ-агент для пайщиков фондов FinEx в ликвидации
 
-Навык и характер для ИИ-агента (Hermes Agent, OpenClaw, Claude Code, Codex CLI), который сопровождает
-ликвидацию фондов FinEx: следит за документами ликвидаторов, суда и регуляторов, собирает новости,
-читает форумы и Telegram, принимает сведения от пользователя и считает, сколько может прийти на пай,
-в сравнении с рыночной ценой и предложениями выкупа.
+[![license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) ![Agent Skills](https://img.shields.io/badge/Agent%20Skills-SKILL.md-0E7A5C) ![Python](https://img.shields.io/badge/python-3.9%2B-3776AB?logo=python&logoColor=white) ![Hermes Agent](https://img.shields.io/badge/Hermes%20Agent-ready-555) ![OpenClaw](https://img.shields.io/badge/OpenClaw-ready-555) ![Claude Code](https://img.shields.io/badge/Claude%20Code-ready-D97757) ![Codex CLI](https://img.shields.io/badge/Codex%20CLI-ready-555)
+
+**Открытый ИИ-агент для держателей фондов FinEx** (FXUS, FXGD, FXCN, FXIT и др.) для Hermes Agent, OpenClaw, Claude Code и Codex CLI: документы ликвидатора Teneo и суда, новости, форумы и Telegram с проверкой, модель выплаты на пай против рыночной цены и предложений выкупа.
+
+[Презентация агента](https://ildargiv.github.io/finex-agent/) · [English](#english) · [Семейство агентов](#семейство-агентов) · [Установка](#установка)
+
+![FinEx: ИИ-агент для пайщиков фондов FinEx в ликвидации, модель выплаты на пай](docs/preview.png)
 
 **Коротко о деле** (на 07.11.2026, подробнее — [case-facts.md](skills/finance/finex-liquidation/references/case-facts.md)):
 фонды — ирландские ICAV (FinEx Funds ICAV и FinEx Physically Backed Funds ICAV, не Швейцария); 29.06.2026
@@ -46,6 +49,8 @@ py $S/status.py --run
 py $S/payout.py
 ```
 
+![Реальный вывод payout.py: три сценария выплаты на пай FinEx и разложение удержаний](docs/answer.png)
+
 ## Приватность
 Портфель, количества, отчёты и переписка хранятся только в `~/finex-desk` (переменная `FINEX_DESK`) на вашем
 компьютере. В репозиторий и в поисковые запросы они не попадают.
@@ -54,3 +59,19 @@ py $S/payout.py
 Hermes/OpenClaw cron или задачи по расписанию Claude: «каждый день в 10:00 — что нового по FinEx, пиши только если есть новый документ, существенная новость или предложение выкупа».
 
 См. [DISCLAIMER.md](DISCLAIMER.md): аналитика, а не инвестиционная или юридическая консультация.
+
+## Семейство агентов
+Каждый агент живёт в своём репозитории и ставится отдельно. Если нужен ещё один, установите его рядом, одной командой (для Claude Code: `./install.sh claude`, для Hermes: `./install.sh`):
+
+| Агент | Для чего | Установка |
+|---|---|---|
+| [Инвесткомитет · ru-stocks-agent](https://github.com/ildargiv/ru-stocks-agent) | анализ акций Мосбиржи: список наблюдения, папка на акцию, инвесткомитет с адвокатом дьявола | `git clone https://github.com/ildargiv/ru-stocks-agent.git && cd ru-stocks-agent && ./install.sh claude` |
+| [Облигационер · ru-bonds-agent](https://github.com/ildargiv/ru-bonds-agent) | облигации РФ: ОФЗ и корпоративные выпуски, YTM, дюрация, кредитный скоринг, скринер | `git clone https://github.com/ildargiv/ru-bonds-agent.git && cd ru-bonds-agent && ./install.sh claude` |
+| [Семейный офис · ru-portfolio-agent](https://github.com/ildargiv/ru-portfolio-agent) | портфель акций: ежедневный брифинг после закрытия биржи, недельный обзор против IMOEX | `git clone https://github.com/ildargiv/ru-portfolio-agent.git && cd ru-portfolio-agent && ./install.sh claude` |
+| [FinEx · finex-agent](https://github.com/ildargiv/finex-agent) | пайщикам фондов FinEx в ликвидации: документы, новости, модель выплаты на пай | `git clone https://github.com/ildargiv/finex-agent.git && cd finex-agent && ./install.sh claude` |
+
+## English
+**FinEx agent (finex-agent)** is an open-source AI agent skill for Russian holders of FinEx ETFs (Irish ICAVs FinEx Funds ICAV and FinEx Physically Backed Funds ICAV) now in liquidation. It tracks documents from the liquidators (Teneo), the High Court of Ireland, the Central Bank of Ireland, the Moscow Exchange and the NSD, collects news and forum/Telegram chatter with fact-checking, imports your holdings from a depository report, and models the expected payout per share (NAV → reserve, redemption fee, costs, frozen assets → time discount → roubles at the CBR rate) in three scenarios against the market price and buy-back offers. Built on the open Agent Skills standard (SKILL.md); works in Hermes Agent, OpenClaw, Claude Code and Codex CLI. Your data stays on your computer. The agent answers in Russian. Analytics only, not investment or legal advice.
+
+## Лицензия
+MIT, см. [LICENSE](LICENSE).
