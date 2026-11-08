@@ -69,8 +69,11 @@ def ccy_by_name(name):
 
 # ---------- Хранилище ----------
 def desk_root():
-    """Корень хранилища: ~/finex-desk или переменная FINEX_DESK. Личные данные живут только здесь."""
-    root = os.environ.get("FINEX_DESK") or os.path.join(os.path.expanduser("~"), "finex-desk")
+    """Корень хранилища: FINEX_DESK, иначе INVEST_VAULT/finex (общее Obsidian-хранилище агентов), иначе ~/finex-desk.
+    Личные данные живут только здесь."""
+    vault = os.environ.get("INVEST_VAULT")
+    root = os.environ.get("FINEX_DESK") or (os.path.join(vault, "finex") if vault else
+                                             os.path.join(os.path.expanduser("~"), "finex-desk"))
     os.makedirs(root, exist_ok=True)
     return root
 

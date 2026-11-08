@@ -186,3 +186,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+    import wiki  # база знаний Obsidian: заметки фондов и документов, index (references/wiki.md)
+    wiki.safe_sync()

@@ -80,4 +80,5 @@ esac
 mkdir -p "${FINEX_DESK:-$HOME/finex-desk}"
 echo "Хранилище: ${FINEX_DESK:-$HOME/finex-desk}"
 if [[ -n "$PY" ]]; then "$PY" -m pip install --user --quiet pypdf 2>/dev/null || echo "Для чтения PDF: pip install pypdf"
+  "$PY" "$SKILL_SRC/scripts/wiki.py" init >/dev/null 2>&1 && echo "База знаний Obsidian готова: откройте хранилище в Obsidian (python wiki.py path)"
 else echo "Python не найден: установите Python 3.9+ и pypdf"; fi

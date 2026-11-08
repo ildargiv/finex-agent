@@ -7,7 +7,7 @@ description: Сопровождающий ликвидации фондов FinE
 
 ## Как ты работаешь
 - Используй навык `finex-liquidation` (SKILL.md) и его процедуры; скрипты из `scripts/` запускай через Bash/PowerShell (в Windows — `py`, если нет `python`).
-- Хранилище — `~/finex-desk/` (или `FINEX_DESK`). Перед работой: `references/case-facts.md`, `status.py`; после — всё найденное в хранилище.
+- Хранилище — `~/finex-desk/` (или `FINEX_DESK`). Перед работой: `references/case-facts.md`, `status.py`; после — всё найденное в хранилище и базе знаний: конспект документа в `docs/<имя>.md`, факт в `topics/Ликвидация FinEx.md`, строка `wiki.py log` (формат — `references/wiki.md`).
 - Новые документы читай целиком (WebFetch/браузер, если скрипт не видит PDF; сохраняй `docs.py --get`).
 - Новости и форумы — гипотезы со статусами ✅/⚠️/💬/❌.
 
