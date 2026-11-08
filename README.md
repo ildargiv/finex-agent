@@ -61,14 +61,14 @@ Hermes/OpenClaw cron или задачи по расписанию Claude: «к�
 См. [DISCLAIMER.md](DISCLAIMER.md): аналитика, а не инвестиционная или юридическая консультация.
 
 ## Семейство агентов
-Четыре открытых агента для российского рынка с одинаковой установкой и общей структурой папок:
+Каждый агент живёт в своём репозитории и ставится отдельно. Если нужен ещё один, установите его рядом, одной командой (для Claude Code: `./install.sh claude`, для Hermes: `./install.sh`):
 
-| Агент | Для чего |
-|---|---|
-| [Инвесткомитет · ru-stocks-agent](https://github.com/ildargiv/ru-stocks-agent) | анализ акций Мосбиржи: список наблюдения, папка на акцию, инвесткомитет с адвокатом дьявола |
-| [Облигационер · ru-bonds-agent](https://github.com/ildargiv/ru-bonds-agent) | облигации РФ: ОФЗ и корпоративные выпуски, YTM, дюрация, кредитный скоринг, скринер |
-| [Семейный офис · ru-portfolio-agent](https://github.com/ildargiv/ru-portfolio-agent) | портфель акций: ежедневный брифинг после закрытия биржи, недельный обзор против IMOEX |
-| [FinEx · finex-agent](https://github.com/ildargiv/finex-agent) | пайщикам фондов FinEx в ликвидации: документы, новости, модель выплаты на пай |
+| Агент | Для чего | Установка |
+|---|---|---|
+| [Инвесткомитет · ru-stocks-agent](https://github.com/ildargiv/ru-stocks-agent) | анализ акций Мосбиржи: список наблюдения, папка на акцию, инвесткомитет с адвокатом дьявола | `git clone https://github.com/ildargiv/ru-stocks-agent.git && cd ru-stocks-agent && ./install.sh claude` |
+| [Облигационер · ru-bonds-agent](https://github.com/ildargiv/ru-bonds-agent) | облигации РФ: ОФЗ и корпоративные выпуски, YTM, дюрация, кредитный скоринг, скринер | `git clone https://github.com/ildargiv/ru-bonds-agent.git && cd ru-bonds-agent && ./install.sh claude` |
+| [Семейный офис · ru-portfolio-agent](https://github.com/ildargiv/ru-portfolio-agent) | портфель акций: ежедневный брифинг после закрытия биржи, недельный обзор против IMOEX | `git clone https://github.com/ildargiv/ru-portfolio-agent.git && cd ru-portfolio-agent && ./install.sh claude` |
+| [FinEx · finex-agent](https://github.com/ildargiv/finex-agent) | пайщикам фондов FinEx в ликвидации: документы, новости, модель выплаты на пай | `git clone https://github.com/ildargiv/finex-agent.git && cd finex-agent && ./install.sh claude` |
 
 ## English
 **FinEx agent (finex-agent)** is an open-source AI agent skill for Russian holders of FinEx ETFs (Irish ICAVs FinEx Funds ICAV and FinEx Physically Backed Funds ICAV) now in liquidation. It tracks documents from the liquidators (Teneo), the High Court of Ireland, the Central Bank of Ireland, the Moscow Exchange and the NSD, collects news and forum/Telegram chatter with fact-checking, imports your holdings from a depository report, and models the expected payout per share (NAV → reserve, redemption fee, costs, frozen assets → time discount → roubles at the CBR rate) in three scenarios against the market price and buy-back offers. Built on the open Agent Skills standard (SKILL.md); works in Hermes Agent, OpenClaw, Claude Code and Codex CLI. Your data stays on your computer. The agent answers in Russian. Analytics only, not investment or legal advice.
